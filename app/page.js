@@ -13,7 +13,7 @@ export default function page() {
           height={196}
           alt='Upscaler Ai - Image Enhancer | Harshit Ostwal'
           quality={100}
-          loading="lazy"
+          priority
         />
       </div>
 
