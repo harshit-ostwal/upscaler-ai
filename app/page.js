@@ -23,8 +23,8 @@ export default function page() {
             <UploadCloud size={24} color='blue' />
           </div>
           <div className="text-center">
-            <h5 className="text-zinc-400">Click to upload or drag and drop</h5>
-            <p className="text-xs text-zinc-500">SVG, PNG, JPG or GIF (max. 1920x1080px)</p>
+            <h5 className="text-zinc-950">Click to upload or drag and drop</h5>
+            <p className="text-xs text-zinc-900">SVG, PNG, JPG or GIF (max. 1920x1080px)</p>
           </div>
           <input type="file" className="sr-only" />
         </label>
