@@ -1,3 +1,4 @@
+import { Toaster } from '@/components/ui/toaster'
 import './globals.css'
 
 export const metadata = {
@@ -8,7 +9,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-gradient-to-r from-rose-400 to-yellow-600 h-screen w-full p-5">
+      <body>
+        <Toaster />
         {children}
       </body>
     </html>
