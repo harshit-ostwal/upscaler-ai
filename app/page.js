@@ -7,7 +7,7 @@ import React, { useState } from 'react'
 
 export default function page() {
 
-    const { toast } = useToast()
+    const { toast } = useToast();
     const [imageFile, setImageFile] = useState("");
     const [upscalerImage, setUpscalerImage] = useState("");
     const [selectedImage, setSelectedImage] = useState(false);
