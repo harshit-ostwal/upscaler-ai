@@ -64,7 +64,7 @@ export default function page() {
 
     return (
         <>
-            <div className="bg-gradient-to-r from-rose-400 to-yellow-600 h-screen w-full font-Comfortaa flex flex-col gap-10 items-center justify-center p-2">
+            <div className="bg-gradient-to-r from-rose-400 to-yellow-600 font-Comfortaa h-screen w-full flex flex-col gap-10 items-center justify-center p-2">
                 <Image
                     src={"/Logo/Upscaler.png"}
                     width={200}

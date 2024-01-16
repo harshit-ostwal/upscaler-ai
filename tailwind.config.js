@@ -18,7 +18,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        Comfortaa: ['Comfortaa', 'sans-serif'],
+        Comfortaa: ['var(--comfortaa)'],
       },
       keyframes: {
         "accordion-down": {

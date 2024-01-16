@@ -5,8 +5,3 @@
 ::-webkit-scrollbar {
     width: 0%;
 }
-
-@font-face {
-    font-family: "Comfortaa";
-    src: url("/fonts/Comfortaa.ttf") format("truetype");
-}
