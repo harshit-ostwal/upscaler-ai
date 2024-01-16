@@ -8,6 +8,7 @@ import React, { useState } from 'react'
 export default function page() {
 
     const { toast } = useToast();
+    const maxFileSize = 10000;
     const [imageFile, setImageFile] = useState("");
     const [upscalerImage, setUpscalerImage] = useState("");
     const [selectedImage, setSelectedImage] = useState(false);
@@ -15,16 +16,28 @@ export default function page() {
     const handleFileChange = (e) => {
         try {
             setImageFile(e.target.files[0]);
-            toast({
-                variant: "success",
-                title: "Upscaler Ai",
-                description: "Image Selected Successfull!",
-            })
+            const fileSize = imageFile.size / 1024;
+
+            if (fileSize > maxFileSize) {
+                toast({
+                    variant: "destructive",
+                    title: "Upscaler Ai",
+                    description: "Image Must Be Less Than 10 MB.",
+                });
+                return;
+            }
+            else {
+                toast({
+                    variant: "success",
+                    title: "Upscaler Ai",
+                    description: "Image Selected Successfull!",
+                })
+            }
         } catch (error) {
             toast({
                 variant: "destructive",
                 title: "Upscaler Ai",
-                description: "Image Selected Successfull!",
+                description: "Image Not Selected?",
             })
         }
     }
@@ -114,8 +127,6 @@ export default function page() {
                                 </>}
                         </div>
                     </>}
-
-
             </div>
         </>
     )
