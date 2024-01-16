@@ -16,23 +16,6 @@ export default function page() {
     const handleFileChange = (e) => {
         try {
             setImageFile(e.target.files[0]);
-            const fileSize = imageFile.size / 1024;
-
-            if (fileSize > maxFileSize) {
-                toast({
-                    variant: "destructive",
-                    title: "Upscaler Ai",
-                    description: "Image Must Be Less Than 10 MB.",
-                });
-                return;
-            }
-            else {
-                toast({
-                    variant: "success",
-                    title: "Upscaler Ai",
-                    description: "Image Selected Successfull!",
-                })
-            }
         } catch (error) {
             toast({
                 variant: "destructive",
@@ -67,12 +50,35 @@ export default function page() {
         }
 
         try {
-            setSelectedImage(true);
-            const res = await axios.request(options);
-            setUpscalerImage(`data:image/png;base64,${Buffer.from(res.data, 'binary').toString('base64')}`);
-        } catch (error) {
+            const fileSize = imageFile.size / 1024;
 
+            if (fileSize > maxFileSize) {
+                toast({
+                    variant: "destructive",
+                    title: "Upscaler Ai",
+                    description: "Image Must Be Less Than 10 MB.",
+                });
+                return;
+            }
+            else {
+                setSelectedImage(true);
+                const res = await axios.request(options);
+                setUpscalerImage(`data:image/png;base64,${Buffer.from(res.data, 'binary').toString('base64')}`);
+            }
+        } catch (error) {
+            toast({
+                variant: "destructive",
+                title: "Upscaler Ai",
+                description: "Not Able To Enhance Image. Try Again?",
+            });
         }
+    }
+
+    const handleDownload = () => {
+        const downloadLink = document.createElement('a');
+        downloadLink.href = upscalerImage;
+        downloadLink.download = 'Upscaler Ai.png';
+        downloadLink.click();
     }
 
     return (
@@ -98,7 +104,7 @@ export default function page() {
                                 className="aspect-video rounded-md"
                             />
                             <div className='flex flex-col gap-2 w-full'>
-                                <button className="px-10 py-4 font-bold bg-[#222222] text-white rounded-md flex gap-2 justify-center"><DownloadCloud size={24} />Download Image</button>
+                                <button onClick={handleDownload} className="px-10 py-4 font-bold bg-[#222222] text-white rounded-md flex gap-2 justify-center"><DownloadCloud size={24} />Download Image</button>
                                 <button onClick={handleNewImage} className="px-10 py-4 font-bold bg-[#222222] text-white rounded-md flex gap-2 justify-center"><Repeat size={24} />Another Image</button>
                             </div>
                         </div>
