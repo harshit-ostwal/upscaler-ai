@@ -42,7 +42,7 @@ export default function page() {
             method: 'POST',
             url: 'https://ai-picture-upscaler.p.rapidapi.com/supersize-image',
             headers: {
-                'X-RapidAPI-Key': 'b6d6f73e16msh0265c2845168e67p1cd592jsnda710d2f0ac8',
+                'X-RapidAPI-Key': '7576085ea4msh253f58532c2f646p1ff104jsn9326372b7929',
                 'X-RapidAPI-Host': 'ai-picture-upscaler.p.rapidapi.com',
             },
             data: data,
@@ -66,6 +66,7 @@ export default function page() {
                 setUpscalerImage(`data:image/png;base64,${Buffer.from(res.data, 'binary').toString('base64')}`);
             }
         } catch (error) {
+            console.log(error);
             toast({
                 variant: "destructive",
                 title: "Upscaler Ai",
