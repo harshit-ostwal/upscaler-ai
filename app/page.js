@@ -66,7 +66,6 @@ export default function page() {
                 setUpscalerImage(`data:image/png;base64,${Buffer.from(res.data, 'binary').toString('base64')}`);
             }
         } catch (error) {
-            console.log(error);
             toast({
                 variant: "destructive",
                 title: "Upscaler Ai",
