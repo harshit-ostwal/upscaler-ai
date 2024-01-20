@@ -42,7 +42,7 @@ export default function page() {
             method: 'POST',
             url: 'https://ai-picture-upscaler.p.rapidapi.com/supersize-image',
             headers: {
-                'X-RapidAPI-Key': '6a959f12cemsh82cf5e384aef1d7p1a392fjsnce94914d66a5',
+                'X-RapidAPI-Key': 'b6d6f73e16msh0265c2845168e67p1cd592jsnda710d2f0ac8',
                 'X-RapidAPI-Host': 'ai-picture-upscaler.p.rapidapi.com',
             },
             data: data,
