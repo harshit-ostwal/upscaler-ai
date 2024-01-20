@@ -34,7 +34,7 @@ export default function page() {
     const handleSumbit = async () => {
         const data = new FormData();
         data.append('image', imageFile);
-        data.append('sizeFactor', 2);
+        data.append('sizeFactor', 10);
         data.append('imageStyle', 'default');
         data.append('noiseCancellationFactor', '0');
 
